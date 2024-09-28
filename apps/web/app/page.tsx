@@ -1,11 +1,12 @@
 import Image from "next/image";
 import { Button } from "@repo/ui/button";
 import styles from "./page.module.css";
+import {add} from "@repo/math/add"
 
 export default function Home() {
   return (
     <div className={styles.page}>
-      <main className={styles.main}>
+      <main className={styles.main}>s
         <Image
           className={styles.logo}
           src="/next.svg"
@@ -49,6 +50,7 @@ export default function Home() {
         <Button appName="web" className={styles.secondary}>
           Open alert
         </Button>
+        <div>{add(1, 2)}</div>
       </main>
       <footer className={styles.footer}>
         <a
