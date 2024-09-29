@@ -9,11 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@repo/ui": "*",
+    "@reduxjs/toolkit": "^2.2.7",
     "@repo/math": "*",
+    "@repo/ui": "*",
     "next": "14.2.6",
+    "next-auth": "^5.0.0-beta.22",
     "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react-dom": "18.3.1",
+    "styled-components": "^6.1.13"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",
@@ -24,5 +27,8 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.6",
     "typescript": "^5"
+  },
+  "resolutions": {
+    "styled-components": "^5"
   }
 }

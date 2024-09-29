@@ -23,6 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <script src="https://unpkg.com/styled-components/dist/styled-components.min.js"></script>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
       </body>
