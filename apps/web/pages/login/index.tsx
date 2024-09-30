@@ -1,38 +1,49 @@
-import React from "react";
-import styled from "styled-components";
+import React, { FormEvent, useState } from "react";
+import {
+  Form,
+  GlobalStyle,
+  Input,
+  Title,
+  Wrapper,
+  Button,
+} from "../../components/components";
+import Head from "next/head";
 
 const Index = () => {
-  // Create a Title component that'll render an <h1> tag with some styles
-  const Title = styled.h1`
-    font-size: 1.5em;
-    text-align: center;
-    color: #bf4f74;
-  `;
-
-  // Create a Wrapper component that'll render a <section> tag swith some styless
-  const Wrapper = styled.section`
-    padding: 4em;
-    background: papayawhip;
-  `;
-  const Button = styled.button<{ $primary?: boolean }>`
-    /* Adapt the colors based on primary prop */
-    background: ${(props) => (props.$primary ? "#BF4F74" : "white")};
-    color: ${(props) => (props.$primary ? "white" : "#BF4F74")};
-    cursor: pointer;
-
-    font-size: 1em;
-    margin: 1em;
-    padding: 0.25em 1em;
-    border: 2px solid #bf4f74;
-    border-radius: 3px;
-  `;
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    console.log("email", email);
+    console.log("password", password);
+  };
 
   return (
-    <Wrapper>
-      <Title>Hello World!</Title>
-      <Button>Normal</Button>
-      <Button $primary>Primary</Button>
-    </Wrapper>
+    <>
+      <Head>
+        <title>Login</title>
+        <meta name="description" content="This is my login description" />
+      </Head>
+      <GlobalStyle />
+      <Wrapper>
+        <Title>Welcome to our NextJS turbo repo application</Title>
+        <Form onSubmit={handleSubmit}>
+          <Input
+            type="email"
+            name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <Input
+            type="password"
+            name="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <Button>Login</Button>
+        </Form>
+      </Wrapper>
+    </>
   );
 };
 
