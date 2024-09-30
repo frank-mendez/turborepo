@@ -8,6 +8,7 @@ import {
   Button,
 } from "../../components/components";
 import Head from "next/head";
+import { signIn } from "next-auth/react";
 
 const Index = () => {
   const [email, setEmail] = useState("");
@@ -42,6 +43,10 @@ const Index = () => {
           />
           <Button>Login</Button>
         </Form>
+        <div>Or</div>
+        <Button type="button" onClick={() => signIn("google")}>
+          Sign In using Google
+        </Button>
       </Wrapper>
     </>
   );
